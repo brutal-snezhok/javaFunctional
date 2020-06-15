@@ -2,7 +2,7 @@ package com.tsyrulik.finalSection;
 
 import java.util.function.Consumer;
 
-public class Main {
+public class Callback {
     public static void main(String[] args) {
 
         hello("John", "Montana", value -> System.out.println("no lastName provided for " + value));

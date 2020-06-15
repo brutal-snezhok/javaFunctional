@@ -1,5 +1,6 @@
 package com.tsyrulik.functionalInterface;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class _Consumer {
@@ -11,7 +12,14 @@ public class _Consumer {
 
         // Consumer Functional interface
         greetCustomerConsumer.accept(maria);
+
+        // BiConsumer
+        greetCustomerConsumerV2.accept(maria, false);
     }
+
+    static BiConsumer<Customer, Boolean> greetCustomerConsumerV2 = (customer, showPhoneNumber) ->
+            System.out.println("Hello " + customer.customerName +
+                    ", thanks for registering phone number " + (showPhoneNumber ? customer.customerPhoneNumber : "*****"));
 
     static Consumer<Customer> greetCustomerConsumer = customer ->
             System.out.println("Hello " + customer.customerName +

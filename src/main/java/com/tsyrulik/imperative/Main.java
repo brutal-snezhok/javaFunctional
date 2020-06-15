@@ -2,6 +2,7 @@ package com.tsyrulik.imperative;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import static com.tsyrulik.imperative.Main.Gender.FEMALE;
 import static com.tsyrulik.imperative.Main.Gender.MALE;
@@ -29,8 +30,9 @@ public class Main {
         }
 
         System.out.println("//Declarative approach");
+        Predicate<Person> personPredicate = person -> FEMALE.equals(person.gender);
         people.stream()
-                .filter(person -> FEMALE.equals(person.gender))
+                .filter(personPredicate)
                 .forEach(System.out::println);
     }
 

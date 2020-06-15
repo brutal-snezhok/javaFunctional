@@ -16,7 +16,7 @@ public class Main {
                 new Person("Alice", FEMALE)
         );
 
-        //Imperative approach
+        System.out.println("//Imperative approach");
         List<Person> females = new ArrayList<>();
         for(Person person : people) {
             if(FEMALE.equals(person.gender)) {
@@ -27,6 +27,11 @@ public class Main {
         for(Person female : females) {
             System.out.println(female);
         }
+
+        System.out.println("//Declarative approach");
+        people.stream()
+                .filter(person -> FEMALE.equals(person.gender))
+                .forEach(System.out::println);
     }
 
     static class Person {
